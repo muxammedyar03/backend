@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Gravitas+One&family=Lexend+Tera:wght@100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Poppins",system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.error_input:-webkit-autofill, .error_input input:-webkit-autofill, .error_input{
+  -webkit-box-shadow: 0 0 50px 0px rgba(255, 192, 192, 0.308) inset,0 0 0px 1000px rgb(255, 255, 255) inset;
+  border: 1px solid rgb(255, 186, 186);
+}
+
+/* Variables */
+@layer base {
+  :root {
+    --primary-color: #172a48; /* Orqa fon rangi */
+    --text-color: #f5f5f0;   /* Matn rangi */
+  }
+}
+
+
+.poppins{
+  font-family: "Poppins", serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.montserrat{
+  font-family: "Montserrat", serif;
+}
+
+.draggable-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.custom-phone-input{
+  padding: 0 0 0 10px;
+}
+.custom-phone-input input {
+  height: 100%;
+  width: 100%;
+  padding-left: 5px;
+  border-radius: 0 10px 10px 0;
+  background-color: transparent;
+}
+.custom-phone-input input:focus{
+  outline: none;
+}
+
+.custom-phone-input .react-phone-number-input__country {
+  border: none; /* Remove any borders from the country code input */
+  color: #333; /* Change the text color */
+}
+
+.draggable-image {
+  cursor: move; /* move cursor */
+  background-blend-mode: screen !important;
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0px;
+  height: 0px;
+  cursor: se-resize; /* resize cursor */
+}
+.line_height{
+  line-height: 7.5rem;
+}
+body {
+  overflow-x: hidden;
+}
+/* Variables */
+
+
+
+.print_area {
+  position: relative;
+  width: 100%; /* yoki o'lchamini moslashtiring */
+  height: 100%;
+  border: 2px dashed #333; /* Chegaraning ko'rinishini tanlang */
+  overflow: hidden; /* Barcha tashqi elementlarni yashirish */
+}
+
+
+@layer utilities {
+  .w_screen{
+    @apply max-w-[1600px] m-auto;
+  }
+  .flex_center{
+    @apply flex justify-center items-center 
+  }
+  .flex_between {
+    @apply flex justify-between items-center 
+  }
+  .flex_row {
+    @apply flex flex-row
+  }
+  .flex_col {
+    @apply flex flex-col
+  }
+  .container_screen {
+    @apply px-5 md:px-10 lg:px-16
+  }
+  .card_wrapper{
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  gap-9  container_screen w-full
+  }
+  .product_carousel_parent_box{
+    @apply flex items-center justify-center gap-3 z-10 
+  }
+  .product_carousel_child_box{
+    @apply w-24 h-24 border rounded-2xl  flex items-center justify-center p-2 mt-[30px] cursor-pointer
+  }
+  .image-wrapper{
+    @apply p-5 flex_center flex-col;
+  }
+  .modal_card{
+    @apply mt-10 overflow-y-auto border-t border-gray-400 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 w-full
+  }
+  /* typography */
+  .header{
+    @apply text-xl font-bold text-blue-600 md:text-2xl lg:text-3xl
+  }
+  .label{
+    @apply text-sm font-medium tracking-tight md:text-xl lg:text-2xl
+  }
+
+  .size_button{
+    @apply font-medium hover:text-white hover:bg-blue-600 transition border border-blue-500;
+  }
+  .left_icon {
+    @apply fill-orange-100 hover:bg-orange-100 active:bg-orange-100 hover:fill-zinc-800 transition border-[1px] border-orange-100 px-1 w-12 h-8 py-1 rounded-full
+  }
+  .text{
+    @apply text-sm sm:text-sm md:text-[1rem] lg:text-lg
+  }
+  .text_paragraph{
+    @apply text-[0.7rem] md:text-[0.9rem] 
+  }
+
+  .button_home{
+    @apply bg-blue-600 text-white text-sm md:text-[16px]  hover:scale-[0.98] transition-all  rounded-lg 
+  }
+
+  .title_text{
+    @apply text-5xl pl-4 text-blue-600  font-extrabold montserrat 
+  }
+
+  /* hero section */
+
+
+  .hero_section {
+    @apply md:h-[750px] w-full pt-16;
+  }
+  .hero_content {
+    @apply flex_col md:flex_row relative w-full h-full flex_between gap-1;
+  }
+  .hero_text {
+    @apply w-full md:w-1/2 h-full p-6 md:p-14 pt-16 md:pt-28;
+  }
+  .hero_title {
+    @apply  font-extrabold text-4xl md:text-5xl montserrat;
+  }
+  .hero_paragraph {
+    @apply max-w-full text-[14px] lg:text-base md:max-w-[35vw]  mt-4 md:mt-0;
+  }
+  
+  .hero_button {
+    @apply mt-6 py-2 md:py-4 px-8 md:px-12 button_home;
+  }
+  .hero_image {
+    @apply w-full md:absolute bottom-0 right-0 md:w-1/2 h-full mt-6 md:mt-0;
+  }
+
+
+
+  /* About busines */
+
+
+  .about_section {
+    @apply flex items-center flex-col lg:flex-row lg:justify-between w-full pt-12 pb-12 lg:pb-2 lg:pt-2 min-h-[800px] gap-4 ;
+  }
+  .about_img_box {
+    @apply flex items-center justify-center lg:w-1/2 h-full z-10;
+  }
+  .about_img {
+    @apply w-[80%];
+  }
+  .about_content {
+    @apply flex items-center justify-center lg:items-stretch lg:justify-start w-full flex-col lg:w-1/2 h-full;
+  }
+  .about_title {
+    @apply lg:text-5xl sm:text-3xl text-2xl text-center lg:text-start font-extrabold  lg:ml-4;
+  }
+  .about_button {
+    @apply lg:py-4 py-3 md:py-6 w-[50%] lg:w-[40%] mt-6 lg:ml-5 lg:mr-4;
+  }
+  .about_accordion_container {
+    @apply mt-12 lg:mt-0 w-[90%] lg:w-[80%];
+  }
+  .accordion_item {
+    @apply pb-2 mt-5 border-b border-black;
+  }
+  .accordion_header {
+    @apply flex items-center justify-between w-full p-4 transition duration-300 bg-transparent cursor-pointer;
+  }
+  .accordion_title {
+    @apply lg:text-xl font-semibold;
+  }
+  .accordion_arrow {
+    @apply text-xl transition-all;
+  }
+  .accordion_content {
+    @apply overflow-hidden text-gray-700;
+  }
+  .accordion_text {
+    @apply pl-4;
+  }
+
+  /* program deatils  */
+
+  .program_details {
+    @apply w-full flex-col-reverse lg:flex-row flex items-center justify-between p-1;
+  }
+  .program_content {
+    @apply lg:w-1/2 lg:inline-block flex items-center justify-center flex-col h-full w-full lg:pl-20 pt-20;
+  }
+  .program_title {
+    @apply title_text;
+  }
+  .program_accordion_container {
+    @apply lg:w-[80%] w-[90%] mb-[200px];
+  }
+  .accordion_item {
+    @apply border-b mt-5 border-black pb-2;
+  }
+  .accordion_header {
+    @apply w-full flex items-center justify-between cursor-pointer p-4 bg-transparent transition duration-300;
+  }
+  .accordion_title {
+    @apply lg:text-xl font-semibold;
+  }
+  .accordion_arrow {
+    @apply text-xl transition-all;
+  }
+  .accordion_content {
+    @apply overflow-hidden text-gray-700;
+  }
+  .accordion_text {
+    @apply pl-4;
+  }
+  .program_image {
+    @apply lg:w-1/2 h-full flex items-center justify-center;
+  }
+  
+
+  
+}
+
+/* Product-color */
+
+.purple {
+  filter: brightness(0.42) sepia(0.5) contrast(1.9) hue-rotate(600deg) saturate(550%) drop-shadow(0 0 7rem rgba(0, 0, 0, 0.5));;
+}
+
+.green{
+  filter: brightness(0.45) sepia(0.5) contrast(1.9) hue-rotate(800deg) saturate(550%) drop-shadow(0 0 7rem rgba(0, 0, 0, 0.5));;
+}
+
+.blue{
+  filter: brightness(0.45) sepia(0.5) contrast(1.9) hue-rotate(570deg) saturate(500%) drop-shadow(0 0 7rem rgba(0, 0, 0, 0.5));;
+}
+
+
+.tshirt{
+  filter: drop-shadow(0 -0.3rem 1.8rem rgba(0, 0, 0, 0.2));
+}
+
+
+.card::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  z-index: 10;
+  border-image: fill 0 linear-gradient(rgba(0, 0, 0, 0) 30%, #0000005a 100%);
+}
+
+/* font */
+@font-face {
+  font-family: 'RealFont';
+  src: url('./fonts/realMadrid.woff2') format('woff2');
+}
+
+.RealFont {
+  font-family: 'RealFont', sans-serif;
+  
+}
+
+@font-face {
+  font-family: 'manchestrFont';
+  src: url('./fonts/manchestrCity.ttf') format('truetype');
+}
+
+
+.manchestrFont {
+  font-family: 'manchestrFont', sans-serif;
+  color: #1C2C5B;
+}
+
+@font-face {
+  font-family: 'juventusFont';
+  src: url('./fonts/juventus.ttf') format('truetype');
+}
+
+
+.juventusFont {
+  font-family: 'juventusFont', sans-serif;
+  color: #D1AB66;
+}
+
+/* border Modal */
+
+.left_box_rouded{
+  border-radius: 14px 0  0 14px;
+}
+
+.right_box_rouded{
+  border-radius: 0 14px  14px 0;
+}
+
+
+/* admin panel order list modal scrollbar style */
+
+.scrollable::-webkit-scrollbar {
+  width: 2px;
+  height: 90px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: rgba(30, 0, 255, 0.363);
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background-color: transparent;
+  
+}
+
+
+
